@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <!--
+        BINGO CHALLENGE!!!
+        Create programmatically (with JS) a BINGO board with 76 cells, from 1 to 76.
+        Create a button to randomize a number from 1 to 76. The same number should be highlighted on the bingo board
+        EXTRA: 
+        - Take ALWAYS a new number (avoid randoming 10 3 times for example)
+        - Create a USER BOARD with random 24 numbers that highlights as the main board does
+        - Let the user choose HOW MANY user boards he's willing to play with and create them.
+    -->
+
+
+    <head>  
+    <title>BINGO</title>
+
+    <style>
+ body {
+  background: #1abc9c;
+  display: flex;
+  height: 100vh;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, th {
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+h1 {
+	font-size: 28px;
+}
+
+table {
+	border-collapse: collapse;
+    width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
+}
+
+th, td {
+	padding: 10px;
+	border: 2px #666 solid;
+	text-align: center;
+	font-size: 24px;
+}
+
+    </style>
+
+  
+
+
+        
+    </head>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  <body>
+
+    <h1> BINGO BOARD </h1>
+    
+<table>
+	<tr>
+		<th width="20%">B</th>
+		<th width="20%">I</th>
+		<th width="20%">N</th>
+		<th width="20%">G</th>
+		<th width="20%">O</th>
+	</tr>
+	<tr id = 'secondrow'>
+		<td id="square0">57</td>
+		<td id="square1">30</td>
+		<td id="square2">09</td>
+		<td id="square3">55</td>
+		<td id="square4">67</td>
+	</tr>
+	<tr id = 'thirdrow'>
+		<td id="square5">22</td>
+		<td id="square6">60</td>
+		<td id="square7">22</td>
+		<td id="square8">11</td>
+		<td id="square9">34</td>
+	</tr>
+	<tr id = 'fourthrow'>
+		<td id="square10">39</td>
+		<td id="square11">17</td>
+		<td id="free">empty </td>
+		<td id="square12">49</td>
+		<td id="square13">71</td>
+	</tr>
+	<tr id = 'fifthrow'>
+		<td id="square14">06</td>
+		<td id="square15">78</td>
+		<td id="square16">05</td>
+		<td id="square17">44</td>
+		<td id="square18">67</td>
+	</tr>
+	<tr id = 'firstrow'>
+		<td id="square19">20</td>
+		<td id="square20">55</td>
+		<td id="square21">50</td>
+		<td id="square22">18</td>
+		<td id="square23">04&nbsp;</td>
+	</tr>
+</table>
+
+
+    
+    <script> 
+let savevalues = []
+let rand = randomnumber = (Math.floor(Math.random() * 75) + 1)
+function checkrowswins(){
+
+  let row1 = document.querySelectorAll("#secondrow")
+
+  for (i = 0; i<row1.length; i++){
+
+    if(row1[i] === rand){
+        savevalues[i] = rand
+        row1[i].style.backgroundColor = 'red'
+
+    }else{
+
+        row1[i].style.backgroundColor = 'black'
+    }
+    }
+  }
+
+
+
+    </script>
+  
+  
+
+  </body>
+</html>
